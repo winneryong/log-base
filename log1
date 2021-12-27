@@ -1,0 +1,3 @@
+# 页面布局盒子边框显示
+## 将下面的内容添加为Chrome的书签，然后打开网页点击书签即可显示所有元素的边框
+javascript: (function() {       var elements = document.body.getElementsByTagName('*');       var items = [];       for (var i = 0; i < elements.length; i++) {          if (elements[i].innerHTML.indexOf('html * { outline: 1px solid red }') != -1) {             items.push(elements[i]);          }       }       if (items.length > 0) {          for (var i = 0; i < items.length; i++) {             items[i].innerHTML = '';          }       } else {          document.body.innerHTML +=             '<style>html * { outline: 1px solid red }</style>';       }  })();
